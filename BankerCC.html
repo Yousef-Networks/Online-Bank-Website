@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Credit Card Applications</title> 
+    <link rel="stylesheet" href="client.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtns = document.querySelectorAll('.accept-btn');
+        const rejectBtns = document.querySelectorAll('.reject-btn');
+
+        acceptBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const application = btn.closest('.application');
+            application.remove();
+            alert('Application accepted!');
+          });
+        });
+
+        rejectBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const application = btn.closest('.application');
+            application.remove();
+            alert('Application rejected!');
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="banker.html" id="back-home">Back to Home Page</a>
+    <section>
+      <h2>Credit Card Applications</h2>
+      <div class="application-list">
+        <div class="application">
+          <h3>Name: Hazem Hazem</h3>
+          <p><strong>Credit Score:</strong> 750</p>
+          <p><strong>Income:</strong> $50,000</p>
+          <p><strong>Employment History:</strong> 5 years</p>
+          <div class="buttons">
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+          </div>
+        </div>
+        <hr>
+        <div class="application">
+          <h3>Name: Hatem Hatem</h3>
+          <p><strong>Credit Score:</strong> 700</p>
+          <p><strong>Income:</strong> $40,000</p>
+          <p><strong>Employment History:</strong> 3 years</p>
+          <div class="buttons">
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

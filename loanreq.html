@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loan Applications</title> 
+    <link rel="stylesheet" href="client.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtns = document.querySelectorAll('.accept-btn');
+        const rejectBtns = document.querySelectorAll('.reject-btn');
+
+        acceptBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const section = btn.closest('.request');
+            section.remove();
+            alert('Application accepted!');
+          });
+        });
+
+        rejectBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const section = btn.closest('.request');
+            section.remove();
+            alert('Application rejected!');
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="banker.html" id="back-home">Back to Home Page</a>
+    <section>
+      <h2>Loan Requests</h2>
+      <div class="request-list">
+        <div class="request">
+          <h3>Name: Mohamed Omar</h3>
+          <p><strong>Credit Score:</strong> 800</p>
+          <p><strong>Income:</strong> $75,000</p>
+          <p><strong>Loan Amount Requested:</strong> $50,000</p>
+          <div class="buttons">
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+          </div>
+        </div>
+        <hr>
+        <div class="request">
+          <h3>Name: Mohy Mohy</h3>
+          <p><strong>Credit Score:</strong> 700</p>
+          <p><strong>Income:</strong> $60,000</p>
+          <p><strong>Loan Amount Requested:</strong> $30,000</p>
+          <div class="buttons">
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

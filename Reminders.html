@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <title>Reminders</title> 
+  <link rel="stylesheet" href="client.css">
+  <script>
+    function handleFormSubmit() {
+      // Get a reference to the form element
+      const form = document.querySelector('form');
+      // Add an event listener to the form's submit event
+      form.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
+        // Display a confirmation message
+        alert('Reminder is set!');
+      });
+    }
+  </script>
+</head>
+<body onload="handleFormSubmit()">
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <section>
+        <h2>Payment Reminders</h2>
+        <form action="set-payment-reminder.php" method="post">
+          <label for="payment-type">Payment Type:</label>
+          <select id="payment-type" name="payment-type">
+            <option value="loan">Loan Payment</option>
+            <option value="utilities">Utilities Payment</option>
+            <option value="other">Other Payment</option>
+          </select>
+          <label for="payment-amount">Payment Amount:</label>
+          <input type="number" id="payment-amount" name="payment-amount" required>
+          <label for="payment-date">Payment Due Date:</label>
+          <input type="date" id="payment-date" name="payment-date" required>
+          <label for="reminder-frequency">Reminder Frequency:</label>
+          <select id="reminder-frequency" name="reminder-frequency">
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+          <label for="reminder-email">Reminder Email:</label>
+          <input type="email" id="reminder-email" name="reminder-email" required>
+          <button type="submit">Set Reminder</button>
+        </form>
+      </section>
+
+
+
+    <script src="scripts/Success.js"></script>
+  </body>
+
+</html>

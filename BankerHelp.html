@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <title>Reports</title> 
+  <link rel="stylesheet" href="client.css">
+  <script>
+    function handleFormSubmit() {
+      // Get a reference to the first form element
+      const technicalIssueForm = document.querySelector('#technical-issue-form');
+      // Add an event listener to the first form's submit event
+      technicalIssueForm.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
+        // Display a confirmation message
+        alert('Issue is sent,We will contact you soon!');
+      });
+      
+      
+    }
+  </script>
+</head>
+<body onload="handleFormSubmit()">
+    <a href="banker.html" id="back-home">Back to Home Page</a>
+    <section>
+        <h2>Report Technical Issues</h2>
+        <form id="technical-issue-form" action="report-technical-issue.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+          <label for="issue-type">Issue Type:</label>
+          <select id="issue-type" name="issue-type">
+            <option value="login-problem">Card Application</option>
+            <option value="account-error">Loan Application</option>
+            <option value="feature-request">Announcements</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="issue-description">Issue Description:</label>
+          <textarea id="issue-description" name="issue-description" required></textarea>
+          <button type="submit">Submit Report</button>
+        </form>
+      </section>
+      
+     
+      
+      <script src="../src/scripts/client.js"></script>
+  </body>
+</html>

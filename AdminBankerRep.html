@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Banker Reports</title>
+    <link rel="stylesheet" href="client.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const submitBtns = document.querySelectorAll('.submit-btn');
+        const freezeBtns = document.querySelectorAll('.freeze-btn');
+
+        submitBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const section = btn.closest('.request');
+            section.remove();
+            alert('Your feedback is sent.');
+          });
+        });
+
+        freezeBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const section = btn.closest('.request');
+            section.remove();
+            alert('Banker Account frozen temporarily!');
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="admin.html" id="back-home">Back to Home Page</a>
+    <section>
+      <h2>Client Reports</h2>
+      <div class="request-list">
+        <div class="request">
+          <h3>Name: Yousef Haleem</h3>
+          <p><strong>Account id:</strong> 42453</p>
+          <p><strong>Date Sent:</strong> 13/2/2023</p>
+          <p><strong>Description:</strong> I received a notification saying that i was logged in yesterday, so i believe that my account is hacked</p>
+          <div class="feedback-form">
+            <input type="text" placeholder="Enter your feedback">
+            <button class="submit-btn">Submit</button>
+          </div>
+          <button class="freeze-btn">Freeze Account</button>
+        </div>
+        <hr>
+        <div class="request">
+          <h3>Name: Bandar</h3>
+          <p><strong>Account Id:</strong> 53252</p>
+          <p><strong>Date Sent:</strong> 23/4/2023</p>
+          <p><strong>Description:</strong> Website keeps crashing everytime i try to pay bill or transfer money </p>
+          <div class="feedback-form">
+            <input type="text" placeholder="Enter your feedback">
+            <button class="submit-btn">Submit</button>
+          </div>
+          <button class="freeze-btn">Freeze Account</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

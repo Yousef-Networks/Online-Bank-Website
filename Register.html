@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      function showSuccessMessage() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        
+        if (password !== confirmPassword) {
+          alert("Passwords do not match. Please re-type your password.");
+          return false; 
+        }
+        
+        alert("Account has been created successfully");
+        return true; 
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="text">
+          <h2> AirBank</h2>
+          <img src="Icon.png" alt="AirBank Logo">
+          <p></p>
+        </div>
+        <div class="form">
+          <h3>Registration</h3>
+          <form id="login-form" onsubmit="return showSuccessMessage()">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Re-Type Password:</label>
+              <input type="password" name="confirm-password" id="confirm-password" required>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Create">
+              <p><a href="login.html">Back to Login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

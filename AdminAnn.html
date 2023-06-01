@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Announcements</title>
+    <link rel="stylesheet" href="client.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          
+          const announcementBtn = document.getElementById('announcement-btn');
+  
+         
+  
+          
+  
+          announcementBtn.addEventListener('click', () => {
+            alert('Announcement is sent to all.');
+          });
+        });
+      </script>
+  </head>
+  <body>
+    <a href="admin.html" id="back-home">Back to Home Page</a>
+    <section>
+        <section>
+            <h2>Announcement</h2>
+            <div class="announcement-section">
+              <input type="text" placeholder="Enter your announcement">
+              <button id="announcement-btn">Submit</button>
+            </div>
+          </section>
+    </section>
+    
+  </body>
+</html>

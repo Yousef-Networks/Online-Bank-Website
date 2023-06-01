@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="client.css">
+    <script>
+      function handleFormSubmit() {
+        // Get a reference to the form element
+        const form = document.querySelector('form');
+        // Add an event listener to the form's submit event
+        form.addEventListener('submit', function(event) {
+          // Prevent the form from submitting to the server
+          event.preventDefault();
+          // Display a confirmation message
+          alert('Transfer completed!');
+        });
+      }
+    </script>
+  </head>
+  <body onload="handleFormSubmit()">
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <section id="transfer-money">
+      <h2>Transfer Money</h2>
+      <form>
+        <label for="from-account">From Account:</label>
+        <select id="from-account" required>
+          <option value="">Select an account</option>
+          <option value="checking">Checking Account</option>
+          <option value="savings">Savings Account</option>
+        </select>
+
+        <label for="from-account">To Account:</label>
+        <select id="from-account" required>
+          <option value="">Select an account</option>
+          <option value="checking">Domestic</option>
+          <option value="savings">International</option>
+          <option value="savings">Internal</option>
+        </select>
+        
+        
+        <label for="to-account">Receiver Account ID:</label>
+        <input type="text" id="to-account" required>
+        
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+        
+        <button type="submit">Transfer</button>
+      </form>
+    </section>
+  </body>
+</html>

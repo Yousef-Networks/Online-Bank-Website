@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <title>Loan</title> 
+  <link rel="stylesheet" href="client.css">
+  <script>
+    function handleFormSubmit() {
+      // Get a reference to the form element
+      const form = document.querySelector('form');
+      // Add an event listener to the form's submit event
+      form.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
+        // Display a confirmation message
+        alert('Applied,Please Wait for the confirmation!');
+      });
+    }
+  </script>
+ <body onload="handleFormSubmit()">
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <section id="loan">
+        <h2>Loan Management</h2>
+        <p>Here's your current loan balance:</p>
+        <ul>
+          <li>Personal Loan - $20,000</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Apply for a Loan</h2>
+        <form action="submit-loan-application.php" method="post">
+          <label for="loan-type">Loan Type:</label>
+          <select id="loan-type" name="loan-type">
+            <option value="personal">Personal Loan</option>
+            <option value="auto">Car Loan</option>
+            
+          </select>
+          <label for="loan-amount">Loan Amount:</label>
+          <input type="number" id="loan-amount" name="loan-amount" required>
+          <label for="loan-term">Loan Term:</label>
+          <select id="loan-term" name="loan-term">
+            <option value="12">12 months</option>
+            <option value="24">24 months</option>
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="60">60 months</option>
+          </select>
+          <label for="applicant-name">Full Name:</label>
+          <input type="text" id="applicant-name" name="applicant-name" required>
+          <label for="applicant-email">Email Address:</label>
+          <input type="email" id="applicant-email" name="applicant-email" required>
+          <label for="applicant-phone">Phone Number:</label>
+          <input type="tel" id="applicant-phone" name="applicant-phone" required>
+          <button type="submit">Submit Application</button>
+        </form>
+      </section>
+
+
+
+    <script src="../src/scripts/client.js"></script>
+  </body>
+
+</html>

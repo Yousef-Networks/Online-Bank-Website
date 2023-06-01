@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transactions</title>
+  <link rel="stylesheet" href="client.css">
+  <script>
+    function handleDropdownChange() {
+      var selectedValue = document.getElementById("dropdown").value;
+      var section1 = document.getElementById("section1");
+      var section2 = document.getElementById("section2");
+      var section3 = document.getElementById("section3");
+      var section4 = document.getElementById("section4");
+      
+      // Reset sections
+      section1.style.display = "none";
+      section2.style.display = "none";
+      section3.style.display = "none";
+      section4.style.display = "none";
+      
+      // Update sections based on selected value
+      if (selectedValue === "option1") {
+        section1.style.display = "block";
+        section2.style.display = "block";
+        section3.style.display = "none";
+        section4.style.display = "none";
+      } else if (selectedValue === "option2") {
+        section1.style.display = "none";
+        section2.style.display = "none";
+        section3.style.display = "block";
+        section4.style.display = "block";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>View Transactions</h1>
+  
+  <label for="dropdown">Select an option:</label>
+  <select id="dropdown" onchange="handleDropdownChange()">
+    <option value="">-- Select --</option>
+    <option value="option1">Acc Id-29482V8</option>
+    <option value="option2">Acc Id-9284Ab2</option>
+  </select>
+  
+  <section id="section1" style="display: none;">
+    <h2>Credit Card Transactions</h2>
+    <p>Here are your recent credit card transactions:</p>
+    <ul>
+      <li>5/1/2023 - Amazon.com - $50.00</li>
+      <li>4/29/2023 - Starbucks - $5.00</li>
+      <li>4/25/2023 - Apple Store - $1,000.00</li>
+    </ul>
+  </section>
+  
+  <section id="section2" style="display: none;">
+    <h2>Bank Account Transactions</h2>
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <ul>
+      <li>
+        <strong>May 15, 2023:</strong> Deposit, $500.00
+      </li>
+      <li>
+        <strong>May 10, 2023:</strong> Withdrawal, $100.00
+      </li>
+      <li>
+        <strong>May 8, 2023:</strong> Online Payment, $50.00
+      </li>
+    </ul>
+  </section>
+  
+  <section id="section3" style="display: none;">
+    <h2>Credit Card Transactions</h2>
+    <p>Here are your recent credit card transactions:</p>
+    <ul>
+      <li>6/1/2023 - Best Buy - $200.00</li>
+      <li>5/29/2023 - Walmart - $75.00</li>
+      <li>5/25/2023 - Target - $150.00</li>
+    </ul>
+  </section>
+  
+  <section id="section4" style="display: none;">
+    <h2>Bank Account Transactions</h2>
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <ul>
+      <li>
+        <strong>June 5, 2023:</strong> Deposit, $1,000.00
+      </li>
+      <li>
+        <strong>June 2, 2023:</strong> Withdrawal, $200.00
+      </li>
+      <li>
+        <strong>May 30, 2023:</strong> Online Payment, $100.00
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

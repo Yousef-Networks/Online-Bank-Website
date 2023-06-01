@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redeem Points</title> 
+    <link rel="stylesheet" href="client.css">
+    <script>
+      function handleFormSubmit() {
+       
+        const form = document.querySelector('form');
+       
+        form.addEventListener('submit', function(event) {
+          
+          event.preventDefault();
+         
+          const currentBalance = parseInt(document.getElementById('points-balance').value);
+          
+          const rewardOption = document.getElementById('reward-options');
+          const rewardValue = parseInt(rewardOption.options[rewardOption.selectedIndex].value);
+        
+          if (rewardValue > currentBalance) {
+            alert('You do not have enough points to redeem this reward.');
+          } else {
+         
+            const newBalance = currentBalance - rewardValue;
+            document.getElementById('points-balance').value = newBalance;
+           
+            alert('Redeem completed!');
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onload="handleFormSubmit()">
+    <a href="client.html" id="back-home">Back to Home Page</a>
+    <section>
+      <h2>Redeem Credit Card Points</h2>
+      <form>
+        <label for="points-balance">Current Points Balance:</label>
+        <input type="number" id="points-balance" name="points-balance" value="1000" readonly>
+        <label for="reward-options">Select Reward:</label>
+        <select id="reward-options" name="reward-options">
+          <option value="500">Cash Back ($50 for 500 points)</option>
+          <option value="1000">Gift Card ($100 for 1000 points)</option>
+          <option value="5000">Travel Rewards (5000 points for a $500 travel voucher)</option>
+        </select>
+        <button type="submit">Redeem Points</button>
+      </form>
+    </section>
+    <script src="../src/scripts/client.js"></script>
+  </body>
+</html>

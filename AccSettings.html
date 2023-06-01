@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <title>Account Settings</title> 
+  <link rel="stylesheet" href="client.css">
+  <!DOCTYPE html>
+<html>
+  <title>Transfer Money</title> 
+  <link rel="stylesheet" href="client.css">
+  <script>
+    function handleFormSubmit() {
+      // Get a reference to the first form element
+      const openAccountForm = document.querySelector('#open-account form');
+      // Add an event listener to the first form's submit event
+      openAccountForm.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
+        // Display a confirmation message
+        alert('Submitted, Please Wait for the confirmation!');
+      });
+      
+      // Get a reference to the second form element
+      const closeAccountForm = document.querySelector('#close-account form');
+      // Add an event listener to the second form's submit event
+      closeAccountForm.addEventListener('submit', function(event) {
+        // Prevent the form from submitting to the server
+        event.preventDefault();
+        // Display a confirmation message
+        alert('Submitted, Please Wait for the confirmation!');
+      });
+    }
+  </script>
+ <body onload="handleFormSubmit()">
+   
+    <section id="open-account">
+      <a href="client.html" id="back-home">Back to Home Page</a>
+        <h2>Open a Bank Account</h2>
+        <form>
+          <label for="account-type">Account Type:</label>
+          <select id="account-type">
+            <option value="checking">Checking Account</option>
+            <option value="savings">Savings Account</option>
+          </select>
+          
+          <label for="initial-deposit">Initial Deposit:</label>
+          <input type="number" id="initial-deposit"required>
+          
+          <button type="submit">Open Account</button>
+        </form>
+      </section>
+      <section id="close-account">
+        <a href="client.html" id="back-home">Back to Home Page</a>
+        <h2>Close a Bank Account</h2>
+        <form>
+          <label for="account-number">Account Number:</label>
+          <input type="text" id="account-number"required>
+          
+          <button type="submit">Close Account</button>
+        </form>
+      </section>
+  
+
+
+
+    <script src="../src/scripts/client.js"></script>
+  </body>
+
+</html>
